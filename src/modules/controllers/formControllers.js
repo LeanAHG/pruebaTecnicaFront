@@ -6,7 +6,8 @@ export default async function saveForm(values, setSubmitting){
     const now = new Date();
     const today = dateFormat(now, "isoDate");
     let year = parseInt(today.slice(0,4)) - values.year;
-    let month = parseInt(today.slice(5,7)) 
+    let month = parseInt(today.slice(5,7));
+    let day = today.slice(8);
     if(month <= values.month){
         month = 12 - values.month + month;
         year--;
@@ -17,7 +18,7 @@ export default async function saveForm(values, setSubmitting){
     if(values.exact){
         values = {
             ...values,
-            birthday: `${year}-${month}-15`
+            birthday: `${year}-${month}-${day}`
         }
     }
     const {data} = await axios.post('http://localhost:1337/dogs', values);
