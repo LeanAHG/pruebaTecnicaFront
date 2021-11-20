@@ -3,7 +3,7 @@ import { useDispatch, useSelector} from "react-redux";
 import './stylesCustom.css'
 import './styles.css'
 import { useEffect } from "react";
-import { getRazas } from '../../store/actions/razaActions';
+import { getRaces } from '../../store/actions/raceActions';
 import { ToastContainer} from 'react-toastify';
 import { load, notDate, notMonth, notName, notRace, notSex, notYear } from '../validations/formValidations';
 import { Formik, Form} from 'formik';
@@ -17,7 +17,7 @@ export default function Register() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getRazas())
+        dispatch(getRaces())
     }, []);
 
     const { races } = useSelector(state => state);

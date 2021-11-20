@@ -1,4 +1,4 @@
-import { GET_RACES } from "../actions/razaActions";
+import { GET_RACES } from "../actions/raceActions";
 
 const INITIAL_STATE = {
     races: []
