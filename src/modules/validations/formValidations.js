@@ -1,4 +1,4 @@
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 export const load = () => toast.success('AGREGADO CON EXITO!', {
     position: "top-center",

@@ -1,12 +1,12 @@
 import axios from "axios";
-export const GET_RAZAS = "GET_RAZAS";
+export const GET_RACES = "GET_RAZAS";
 
-export function getRazas() {
+export function getRaces() {
     return async function (dispatch) {
         try{
-            const {data} = await axios.get('http://localhost:1337/razas')
+            const {data} = await axios.get('http://localhost:1337/races')
             dispatch({
-                type: GET_RAZAS,
+                type: GET_RACES,
                 payload: data
             })
         }

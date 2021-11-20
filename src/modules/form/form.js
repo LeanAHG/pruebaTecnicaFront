@@ -20,10 +20,10 @@ export default function Register() {
         dispatch(getRazas())
     }, []);
 
-    const { razas } = useSelector(state => state);
-    const arrayRazas = razas.map(e => e.name);
+    const { races } = useSelector(state => state);
+    const arrayRaces = races.map(e => e.name);
     const now = new Date();
-    const hoy = dateFormat(now, "isoDate")
+    const today = dateFormat(now, "isoDate")
 
     //return del componente------------------------------------------------------------------------
     return (
@@ -64,7 +64,7 @@ export default function Register() {
                     <MySelect label="Raza" name="race">
                         <option value="">Seleccionar raza</option>
                         {
-                            razas && arrayRazas? arrayRazas.map( (e, index) =>{
+                            races && arrayRaces? arrayRaces.map( (e, index) =>{
                                 return <option key={index} value={e}>{e}</option>
                             })
                             : "Loading"
@@ -103,7 +103,7 @@ export default function Register() {
                                 label="Fecha de nacimiento"
                                 name="birthday"
                                 type="date"
-                                max={hoy} 
+                                max={today} 
                             />
                     }
                     <button type="submit">Agregar</button>

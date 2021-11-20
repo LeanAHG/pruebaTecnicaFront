@@ -1,15 +1,15 @@
-import { GET_RAZAS } from "../actions/razaActions";
+import { GET_RACES } from "../actions/razaActions";
 
 const INITIAL_STATE = {
-    razas: []
+    races: []
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case GET_RAZAS:
+        case GET_RACES:
             return {
                 ...state, 
-                razas: action.payload
+                races: action.payload
             };
 
         default:
